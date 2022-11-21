@@ -18,7 +18,11 @@ class _PrincipalScreenWidgetState extends State<PrincipalScreenWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Minhas linguagens")),
+      appBar: AppBar(
+        title: const Text("Minhas linguagens"),
+        actions: [
+          IconButton(onPressed: _goToForm, icon: const Icon(Icons.add))
+        ]),
       body: Column(children: [
         Center(
             child: Wrap(
@@ -53,5 +57,9 @@ class _PrincipalScreenWidgetState extends State<PrincipalScreenWidget> {
         subtitle: Text(language.description),
       ));
     }).toList();
+  }
+
+  void _goToForm(){
+      Navigator.pushNamed(context, "/add");
   }
 }

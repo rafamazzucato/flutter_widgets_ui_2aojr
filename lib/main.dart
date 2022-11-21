@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_widgets_ui/screens/form.dart';
 import 'package:flutter_widgets_ui/screens/principal.dart';
 
 void main() {
@@ -15,7 +16,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const PrincipalScreenWidget(),
+      initialRoute: "/",
+      routes: {
+        "/" : (context) => const PrincipalScreenWidget(),
+        "/add" : (context) => FormLanguageWidget()
+      },
     );
   }
 }
