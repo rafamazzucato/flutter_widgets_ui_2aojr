@@ -12,13 +12,17 @@ class PrincipalScreenWidget extends StatefulWidget {
 class _PrincipalScreenWidgetState extends State<PrincipalScreenWidget> {
   List<Language> languages = [];
 
+  final title = const Text("Minhas linguagens");
+  final iconAdd = const Icon(Icons.add);
+  final iconCircle = const Icon(Icons.circle_outlined);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Minhas linguagens"),
+        title: title,
         actions: [
-          IconButton(onPressed: _goToForm, icon: const Icon(Icons.add))
+          IconButton(onPressed: _goToForm, icon: iconAdd)
         ]),
       body: Column(children: [
         Center(
@@ -48,7 +52,7 @@ class _PrincipalScreenWidgetState extends State<PrincipalScreenWidget> {
     return languages.where((language) => language.selected).map((language) {
       return Card(
           child: ListTile(
-        leading: const Icon(Icons.circle_outlined),
+        leading:  iconCircle,
         title: Text(language.name),
         subtitle: Text(language.description),
       ));
