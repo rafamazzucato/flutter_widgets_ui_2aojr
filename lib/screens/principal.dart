@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_widgets_ui/models/language.dart';
+import 'package:flutter_widgets_ui/utils/default_widgets.dart';
 
 class PrincipalScreenWidget extends StatefulWidget {
   const PrincipalScreenWidget({super.key});
@@ -11,10 +11,6 @@ class PrincipalScreenWidget extends StatefulWidget {
 
 class _PrincipalScreenWidgetState extends State<PrincipalScreenWidget> {
   List<Language> languages = [];
-
-  final title = const Text("Minhas linguagens");
-  final iconAdd = const Icon(Icons.add);
-  final iconCircle = const Icon(Icons.circle_outlined);
 
   @override
   Widget build(BuildContext context) {
