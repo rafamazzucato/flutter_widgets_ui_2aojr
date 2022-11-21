@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widgets_ui/components/input.dart';
+import 'package:flutter_widgets_ui/models/language.dart';
 
 class FormLanguageWidget extends StatelessWidget {
   FormLanguageWidget({super.key});
@@ -36,6 +37,13 @@ class FormLanguageWidget extends StatelessWidget {
                 child: ElevatedButton(
                   child: const Text("Gravar"),
                   onPressed: () {
+                    if(_formKey.currentState!.validate()){
+                      Language language = Language(
+                        _nameController.text, 
+                        _detailController.text);
+
+                      Navigator.pop(context, language);
+                    }
                   }))
             ]),
         ),

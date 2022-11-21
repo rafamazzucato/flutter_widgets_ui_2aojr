@@ -46,10 +46,9 @@ class _PrincipalScreenWidgetState extends State<PrincipalScreenWidget> {
 
   List<Widget> _buildListItems() {
     return languages.where((language) => language.selected).map((language) {
-      final Widget svg = SvgPicture.asset(language.asset, semanticsLabel: language.name, width: 24,height: 24);
       return Card(
           child: ListTile(
-        leading: svg,
+        leading: const Icon(Icons.circle_outlined),
         title: Text(language.name),
         subtitle: Text(language.description),
       ));
@@ -57,6 +56,12 @@ class _PrincipalScreenWidgetState extends State<PrincipalScreenWidget> {
   }
 
   void _goToForm(){
-      Navigator.pushNamed(context, "/add");
+    Future future = Navigator.pushNamed(context, "/add");
+
+    future.then((language){
+      setState(() {
+        languages.add(language);
+      });
+    });
   }
 }
