@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_widgets_ui/components/input.dart';
 
 class FormLanguageWidget extends StatelessWidget {
   FormLanguageWidget({super.key});
@@ -18,38 +19,23 @@ class FormLanguageWidget extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              TextFormField(
-                decoration: const InputDecoration(
-                  hintText: "Nome da linguagem",
-                  labelText: "Nome da linguagem",
-                ),
+              InputForm(
+                hintText: "Nome da linguagem",
+                labelText: "Nome da linguagem",
                 controller: _nameController,
-                validator: (value){
-                  if(value == null || value.isEmpty){
-                    return 'Insira o nome da linguagem';
-                  }
-                  return null;
-                },
+                validationMsg: 'Insira o nome da linguagem'
               ),
-              TextFormField(
-                decoration: const InputDecoration(
-                  hintText: "Detalhe da linguagem",
-                  labelText: "Detalhe da linguagem",
-                ),
+              InputForm(
+                hintText: "Detalhe da linguagem",
+                labelText: "Detalhe da linguagem",
                 controller: _detailController,
-                validator: (value){
-                  if(value == null || value.isEmpty){
-                    return 'Insira o detalhe da linguagem';
-                  }
-                  return null;
-                },
+                validationMsg: 'Insira o detalhe da linguagem'
               ),
               Padding(
-                padding: EdgeInsets.only(top: 16),
+                padding: const EdgeInsets.only(top: 16),
                 child: ElevatedButton(
-                  child: Text("Gravar"),
+                  child: const Text("Gravar"),
                   onPressed: () {
-                    
                   }))
             ]),
         ),

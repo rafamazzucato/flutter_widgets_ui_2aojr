@@ -10,10 +10,7 @@ class PrincipalScreenWidget extends StatefulWidget {
 }
 
 class _PrincipalScreenWidgetState extends State<PrincipalScreenWidget> {
-  List<Language> languages = [
-    Language("React", "Meta framework", "assets/react.svg"),
-    Language("iOS", "Apple native language", "assets/apple.svg"),
-  ];
+  List<Language> languages = [];
 
   @override
   Widget build(BuildContext context) {
